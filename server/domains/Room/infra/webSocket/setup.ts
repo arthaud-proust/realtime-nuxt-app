@@ -33,6 +33,11 @@ export const setupRoomsWebSocket = (
 		const room = roomManager.firstOrCreate(roomId);
 		const session = room.retrieveOrNewSession(sessionId, openSessionData);
 
+		session.isOnline = true;
+		socket.on("disconnect", () => {
+			session.isOnline = false;
+		});
+
 		registerEvents(socket, session);
 	};
 

@@ -12,6 +12,8 @@ const roomManager = new RoomManager();
 
 setupRoomsWebSocket(webSocketServer, roomManager);
 
+setInterval(() => roomManager.clean(), 1_000);
+
 export const app = {
 	engineServer,
 	socketServer: webSocketServer,

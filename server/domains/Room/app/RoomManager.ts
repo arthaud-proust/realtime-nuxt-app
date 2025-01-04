@@ -7,7 +7,7 @@ export class RoomManager {
 		return this.rooms.get(roomId) ?? this.create(roomId);
 	}
 
-	create(roomId: RoomId) {
+	private create(roomId: RoomId) {
 		const room = new Room(roomId);
 
 		this.rooms.set(roomId, room);
@@ -17,5 +17,15 @@ export class RoomManager {
 
 	delete(roomId: RoomId) {
 		this.rooms.delete(roomId);
+	}
+
+	get roomsArray() {
+		return [...this.rooms.values()];
+	}
+
+	clean() {
+		this.roomsArray.map(
+			(room) => room.canBeDeleted && this.delete(room.id),
+		);
 	}
 }

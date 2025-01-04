@@ -21,6 +21,14 @@ export class Room {
 		return true;
 	}
 
+	private get onlineSessions() {
+		return this.sessions.filter((session) => session.isOnline);
+	}
+
+	get canBeDeleted() {
+		return this.onlineSessions.length === 0;
+	}
+
 	private retrieveSession(sessionId: RoomSessionId) {
 		const session = this.sessions.find(
 			(session) => session.id === sessionId,

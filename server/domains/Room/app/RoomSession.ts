@@ -13,11 +13,13 @@ export class RoomSession {
 	readonly id: RoomSessionId;
 	readonly data: RoomSessionData;
 	private readonly room: Room;
+	isOnline: boolean;
 
 	constructor(room: Room, id: RoomSessionId, data: RoomSessionData) {
 		this.room = room;
 		this.id = id;
 		this.data = data;
+		this.isOnline = true;
 	}
 
 	get roomId() {
