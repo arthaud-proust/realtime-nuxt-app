@@ -1,0 +1,36 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            -
+                uses: actions/checkout@v3
+
+            -
+                name: Install Node.js
+                uses: actions/setup-node@v3
+                with:
+                    node-version: "22.x"
+
+            -
+                name: Install dependencies
+                run: npm i -g yarn && yarn
+
+            -
+                name: Run smoke tests
+                run: yarn test:smoke
+
+            -
+                name: Run unit tests
+                run: yarn test:unit
+
+            -
+                name: Build task
+                run: yarn build
