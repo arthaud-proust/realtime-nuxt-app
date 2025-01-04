@@ -38,6 +38,24 @@
 						</UBadge>
 					</div>
 				</header>
+
+				<UAlert
+					v-if="!isConnected && !canShowDisconnectedAlert"
+					icon="i-heroicons-signal"
+					color="blue"
+					variant="soft"
+					title="Connecting"
+					description="This should not take much time..."
+				/>
+
+				<UAlert
+					v-if="!isConnected && canShowDisconnectedAlert"
+					icon="i-heroicons-signal-slash"
+					color="red"
+					variant="soft"
+					title="Unable to connect"
+					description="This room may not accept new connections, or you may have network issues."
+				/>
 			</div>
 		</UContainer>
 	</main>
@@ -46,11 +64,14 @@
 <script setup lang="ts">
 import { useRoom } from "@/composables/useRoom";
 import { humanizeRoomId } from "@/shared/utils/room";
+import { useTimeout } from "@vueuse/core";
 
 const props = defineProps<{
 	roomId: string;
 	username: string;
 }>();
+
+const canShowDisconnectedAlert = useTimeout(2_000);
 
 const { isConnected, transport } = useRoom({
 	roomId: props.roomId,
