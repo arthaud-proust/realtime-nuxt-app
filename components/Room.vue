@@ -1,5 +1,5 @@
 <template>
-	<main class="h-screen overflow-y-auto overscroll-none">
+	<main class="h-dvh overflow-y-auto overscroll-none">
 		<UContainer :ui="{ constrained: 'max-w-xl' }">
 			<div class="min-h-screen relative flex flex-col items-center">
 				<header
@@ -18,10 +18,22 @@
 							humanizeRoomId(roomId)
 						}}</span>
 
-						<UBadge v-if="isConnected" color="green" variant="soft">
-							Connected via {{ transport }}
+						<UBadge
+							v-if="isConnected"
+							color="green"
+							variant="soft"
+							class="capitalize"
+							icon="i-heroicons-signal-16-solid"
+							:trailing="false"
+						>
+							{{ transport }}
 						</UBadge>
-						<UBadge v-else color="red" variant="soft"
+						<UBadge
+							v-else
+							color="red"
+							variant="soft"
+							icon="i-heroicons-signal-slash-16-solid"
+							:trailing="false"
 							>Disconnected
 						</UBadge>
 					</div>

@@ -1,6 +1,6 @@
 <template>
-	<UContainer class="min-h-screen" :ui="{ constrained: 'max-w-xl' }">
-		<div class="flex flex-col justify-center items-center">
+	<UContainer :ui="{ constrained: 'max-w-xl' }">
+		<div class="min-h-dvh flex flex-col justify-center items-center">
 			<Head>
 				<Title>App</Title>
 			</Head>
@@ -18,7 +18,7 @@
 			</header>
 
 			<div
-				class="min-h-screen flex flex-col justify-center items-center gap-2 w-full"
+				class="grow flex flex-col justify-center items-center gap-2 w-full"
 			>
 				<UInput
 					autofocus
@@ -50,41 +50,41 @@
 					:trailing="true"
 				/>
 			</div>
+		</div>
 
-			<div
-				v-if="savedSessions.list.value.length"
-				class="-mt-28 w-full flex flex-col gap-2 pb-4"
+		<div
+			v-if="savedSessions.list.value.length"
+			class="-mt-16 w-full flex flex-col gap-2 pb-4"
+		>
+			<p class="text-center">Saved sessions</p>
+			<UCard
+				class="relative"
+				v-for="session in savedSessions.list.value"
+				:key="session.id"
 			>
-				<p class="text-center">Saved sessions</p>
-				<UCard
-					class="relative"
-					v-for="session in savedSessions.list.value"
-					:key="session.id"
-				>
-					<NuxtLink
-						:to="`/room/${session.roomId}`"
-						class="absolute inset-0"
-					/>
-					<div class="flex items-center justify-between gap-2">
-						<div>
-							<p class="capitalize">
-								{{ humanizeRoomId(session.roomId) }}
-							</p>
-							<p class="text-neutral-500 italic">
-								As {{ session.data.username }}
-							</p>
-						</div>
-
-						<UButton
-							variant="ghost"
-							color="red"
-							icon="i-heroicons-trash"
-							size="md"
-							@click="savedSessions.forget(session)"
-						/>
+				<NuxtLink
+					:to="`/room/${session.roomId}`"
+					class="absolute inset-0"
+				/>
+				<div class="flex items-center justify-between gap-2">
+					<div>
+						<p class="capitalize">
+							{{ humanizeRoomId(session.roomId) }}
+						</p>
+						<p class="text-neutral-500 italic">
+							As {{ session.data.username }}
+						</p>
 					</div>
-				</UCard>
-			</div>
+
+					<UButton
+						variant="ghost"
+						color="red"
+						icon="i-heroicons-trash"
+						size="md"
+						@click="savedSessions.forget(session)"
+					/>
+				</div>
+			</UCard>
 		</div>
 	</UContainer>
 </template>
