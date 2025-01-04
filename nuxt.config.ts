@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 				},
 			},
 		},
+		typeCheck: true,
 	},
 	colorMode: {
 		preference: "light",

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { RoomManager } from "~/server/domains/Room/app/RoomManager";
+import { RoomManager } from "@/server/domains/Room/app/RoomManager";
 
 describe("clean", () => {
 	it("delete all rooms with no session", () => {
