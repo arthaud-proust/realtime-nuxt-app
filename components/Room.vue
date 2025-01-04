@@ -22,8 +22,8 @@
 							Connected via {{ transport }}
 						</UBadge>
 						<UBadge v-else color="red" variant="soft"
-							>Disconnected</UBadge
-						>
+							>Disconnected
+						</UBadge>
 					</div>
 				</header>
 			</div>
@@ -33,10 +33,10 @@
 
 <script setup lang="ts">
 import { useRoom } from "@/composables/useRoom";
-import type { RoomId } from "@/app/Room/application/Room";
+import { humanizeRoomId } from "@/shared/utils/room";
 
 const props = defineProps<{
-	roomId: RoomId;
+	roomId: string;
 	username: string;
 }>();
 

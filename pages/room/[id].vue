@@ -12,6 +12,7 @@
 <script setup lang="ts">
 import Room from "@/components/Room.vue";
 import EditUsernameModal from "@/components/EditUsernameModal.vue";
+import { humanizeRoomId } from "@/shared/utils/room";
 
 const { params } = useRoute();
 const roomId = params.id as string;

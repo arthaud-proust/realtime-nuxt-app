@@ -1,10 +1,8 @@
 import { useSocket } from "@/composables/useSocket";
 import { useSavedSessions } from "@/composables/useSavedSessions";
 
-import type { RoomId } from "@/app/Room/application/Room";
-
 export type UseRoomProps = {
-	roomId: RoomId;
+	roomId: string;
 	username: string;
 };
 

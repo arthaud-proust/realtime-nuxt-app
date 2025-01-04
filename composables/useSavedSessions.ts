@@ -1,6 +1,6 @@
 import { useLocalStorage } from "@vueuse/core";
 import { localStorageKey } from "@/utils/localStorage";
-import type { RoomSessionDto } from "@/app/Room/application/RoomSession";
+import type { RoomSessionDto } from "@/shared/types/dto";
 
 const SAVED_ROOMS_LOCAL_STORAGE_KEY = "saved-sessions";
 export const useSavedSessions = () => {

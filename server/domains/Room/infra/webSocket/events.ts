@@ -1,5 +1,5 @@
-import type { WebSocketServerSocket } from "@/app/Room/infrastructure/webSocket/types";
-import type { RoomSession } from "@/app/Room/application/RoomSession";
+import type { WebSocketServerSocket } from "@/shared/types/socket";
+import type { RoomSession } from "@/server/domains/Room/app/RoomSession";
 
 export const registerEvents = (
 	socket: WebSocketServerSocket,

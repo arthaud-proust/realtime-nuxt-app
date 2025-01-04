@@ -1,6 +1,6 @@
 import type { NitroApp } from "nitropack";
 import { defineEventHandler } from "h3";
-import { app } from "@/app/app";
+import { app } from "@/server/app";
 
 export default defineNitroPlugin((nitroApp: NitroApp) => {
 	nitroApp.router.use(

@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import type { WebSocketClient } from "@/app/Room/infrastructure/webSocket/types";
+import type { WebSocketClient } from "@/shared/types/socket";
 
 type UseSocketProps = {
 	query?: {

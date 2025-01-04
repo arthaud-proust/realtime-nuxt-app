@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Room } from "@/app/Room/application/Room";
+import type { Room } from "@/server/domains/Room/app/Room";
 
 export const RoomSessionDataSchema = z.object({
 	username: z.string(),
@@ -24,9 +24,3 @@ export class RoomSession {
 		return this.room.id;
 	}
 }
-
-export type RoomSessionDto = {
-	id: RoomSession["id"];
-	data: RoomSession["data"];
-	roomId: RoomSession["roomId"];
-};

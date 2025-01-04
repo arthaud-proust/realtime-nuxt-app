@@ -1,6 +1,6 @@
 import { Namespace, Server, Socket as ServerSocket } from "socket.io";
 import { Socket } from "socket.io-client";
-import type { RoomSessionDto } from "@/app/Room/application/RoomSession";
+import type { RoomSessionDto } from "@/shared/types/dto";
 
 export type ClientToServerEvents = {
 	//

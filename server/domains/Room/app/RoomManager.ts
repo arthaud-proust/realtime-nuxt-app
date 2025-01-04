@@ -1,4 +1,4 @@
-import { Room, type RoomId } from "@/app/Room/application/Room";
+import { Room, type RoomId } from "@/server/domains/Room/app/Room";
 
 export class RoomManager {
 	private rooms = new Map<RoomId, Room>();

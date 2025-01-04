@@ -3,7 +3,7 @@ import {
 	RoomSession,
 	type RoomSessionData,
 	type RoomSessionId,
-} from "@/app/Room/application/RoomSession";
+} from "@/server/domains/Room/app/RoomSession";
 
 export const RoomIdSchema = z.string();
 export type RoomId = z.infer<typeof RoomIdSchema>;

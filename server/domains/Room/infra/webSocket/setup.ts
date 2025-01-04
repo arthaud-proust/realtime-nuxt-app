@@ -1,14 +1,14 @@
 import type {
 	WebSocketServer,
 	WebSocketServerSocket,
-} from "@/app/Room/infrastructure/webSocket/types";
-import { RoomManager } from "@/app/Room/application/RoomManager";
-import { RoomIdSchema } from "@/app/Room/application/Room";
+} from "@/shared/types/socket";
+import { RoomManager } from "@/server/domains/Room/app/RoomManager";
+import { RoomIdSchema } from "@/server/domains/Room/app/Room";
 import {
 	RoomSessionDataSchema,
 	RoomSessionIdSchema,
-} from "@/app/Room/application/RoomSession";
-import { registerEvents } from "@/app/Room/infrastructure/webSocket/events";
+} from "@/server/domains/Room/app/RoomSession";
+import { registerEvents } from "@/server/domains/Room/infra/webSocket/events";
 
 export const setupRoomsWebSocket = (
 	webSocketServer: WebSocketServer,

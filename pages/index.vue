@@ -91,7 +91,7 @@
 <script setup lang="ts">
 import { generate } from "random-words";
 import EditUsernameModal from "@/components/EditUsernameModal.vue";
-import { stringifyRoomId } from "@/utils/room";
+import { humanizeRoomId, stringifyRoomId } from "@/shared/utils/room";
 
 const { username, isUsernameBlank } = useUsername();
 const savedSessions = useSavedSessions();
