@@ -13,7 +13,7 @@ const roomManager = new RoomManager();
 setupRoomsWebSocket(webSocketServer, roomManager);
 
 export const app = {
-  engineServer,
-  socketServer: webSocketServer,
-  roomManager,
+	engineServer,
+	socketServer: webSocketServer,
+	roomManager,
 };

@@ -1,10 +1,10 @@
 <template>
-    <div class="h-screen">
-        <NuxtPage />
-    </div>
+	<div class="h-screen">
+		<NuxtPage />
+	</div>
 </template>
 <script setup lang="ts">
-import {provideUseId} from '@headlessui/vue'
+import { provideUseId } from "@headlessui/vue";
 
-provideUseId(() => useId())
+provideUseId(() => useId());
 </script>

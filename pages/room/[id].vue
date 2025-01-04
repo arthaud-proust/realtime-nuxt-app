@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <EditUsernameModal v-model:opened="isEditUsernameModalOpen" />
+	<div>
+		<EditUsernameModal v-model:opened="isEditUsernameModalOpen" />
 
-    <Room
-      v-if="username && !isUsernameBlank && !isEditUsernameModalOpen"
-      :room-id="roomId"
-      :username="username"
-    />
-  </div>
+		<Room
+			v-if="username && !isUsernameBlank && !isEditUsernameModalOpen"
+			:room-id="roomId"
+			:username="username"
+		/>
+	</div>
 </template>
 <script setup lang="ts">
 import Room from "@/components/Room.vue";
@@ -19,7 +19,7 @@ const roomId = params.id as string;
 const { username, isUsernameBlank } = useUsername();
 
 useHead({
-  title: humanizeRoomId(roomId),
+	title: humanizeRoomId(roomId),
 });
 
 const isEditUsernameModalOpen = ref(toValue(isUsernameBlank));
